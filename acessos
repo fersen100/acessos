@@ -22,11 +22,11 @@ SAIPANNEW TERADATA
 h_loaddw
 h_loaddw
 
-SCQC PRODU«√O:
+SCQC PRODU√á√ÉO:
 10.129.168.183/scqc/asp/default/login.asp
  CQC Pass: pcp@2009
 
-SCQC HOMOLOGA«√O
+SCQC HOMOLOGA√á√ÉO
 http://10.129.178.149/scqc/asp/default/login.asp
 user cqc senha producao
 
@@ -44,7 +44,7 @@ ADWEB DIEGORSILVA32 Senha 54B
 
 
 
-ConfiguraÁ„o Maquina
+Configura√ß√£o Maquina
 
 Proxy: proxy.indproj.com.br Port: 3128
 
@@ -61,11 +61,20 @@ SENHA :INDRA321
 a5128280 lffg02
 
 
->conex„o PWC / ORACLE
+>conex√£o PWC / ORACLE
 user:adminodsv2_10
 pass:adminods
 
 UNIX VIVO2
 USER: dsv_pw
 SENHA: gvt_123
+
+VIVO2 - PROD
+dsv_pw
+2018_pwcvivo
+
+QUERY PARA VERIFICAR USUARIOS VIVO2
+
+SELECT * FROM BITB000_CTRL_USUARIOS_SENHAS;
+
 
