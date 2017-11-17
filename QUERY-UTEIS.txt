@@ -1,0 +1,75 @@
+
+------------------------------------------- 
+De: Pereira Couto Junior, Mario 
+Enviado: quinta-feira, 29 de dezembro de 2016 17:48:25 
+Para: Usuario Genérico sustentacaobi 
+Assunto: Querys uteis 
+Enviado automaticamente por uma Regra
+
+======================================================================
+QUERYS UTEIS
+======================================================================
+--Query espaço disponível e usado em um database
+
+SELECT 
+DataBaseName, 
+SUM(MaxPerm)/1024/1024/1024 AS TOTAL,  
+SUM(CurrentPerm)/1024/1024/1024 AS USADO, 
+(SUM(MaxPerm)/1024/1024/1024 -SUM(CurrentPerm)/1024/1024/1024) AS LIVRE
+FROM DBC.DISKSPACE
+WHERE DataBaseName = 'H_TGTDB'
+GROUP BY 1;
+
+======================================================================
+--Query espaço usado em um database
+SELECT 
+tableName, 
+DataBaseName,
+SUM(CurrentPerm)/1024/1024/1024 AS USADO
+FROM DBC.TableSize
+WHERE DataBaseName = 'H_TGTDB'
+GROUP BY 1,2;
+
+======================================================================
+---ESPAÇO OCUPADO POR TABELA-----
+SELECT C.COMMENTSTRING,
+       B.CREATORNAME,
+       C.CreateTimeStamp,
+       A.TABLENAME,
+       B.LastAccessTimeStamp,
+       B.LastAlterTimeStamp,
+       SUM(A.CURRENTPERM)/1024/1024/1024 ( DECIMAL(10,4) ) SPACE_USADO,
+       (SPACE_USADO/750)*100 AS "PERC_%"
+  FROM DBC.TABLESIZE A
+INNER JOIN
+       DBC.TABLES B
+    ON A.TABLENAME = B.TABLENAME
+INNER JOIN
+       DBC.DATABASES C
+    ON C.DATABASENAME = B.CREATORNAME    
+ WHERE A.DATABASENAME = 'H_TGTDB'
+   AND B.DATABASENAME = 'H_TGTDB'
+   --and A.TABLENAME = 'TB_FAT_PRQE_LNHA'
+
+  --- AND EXTRACT(YEAR FROM B.LastAccessTimeStamp) = 2011
+GROUP BY 1,2,3,4,5, 6   
+ORDER BY SPACE_USADO DESC
+
+Mário Pereira Couto Júnior
+Analista de Sistemas BI
+Serviços Globais de Produção -  BI
+Av. Guido Caloi, 1002 - Torre III - 2º andar 
+05802-140 - São Paulo – SP - Brasil
+T +55 11 5171 7873
+mpereirac@indracompany.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+

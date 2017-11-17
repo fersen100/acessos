@@ -1,0 +1,4 @@
+teradata- tratamento de erro
+
+
+Comando correto: .if ERRORCODE <> 0 then .quit ERRORCODE;	
