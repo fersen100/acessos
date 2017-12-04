@@ -1,21 +1,17 @@
 Acessos Indra
 
 PWC: mario.couto Pass: vivo2015 (Mario)
-Teradata: a5128280 Pass:             / DW_PRD Login a5131100 Pass: Indra2016
+
 
 2650_PROD 
-IP - 10.238.0.67
-usuario: a5113588
-senha: indw2904
+IP - 10.238.5.7
+
 
 PROD
 10.238.7.5
 e419019 (Renan)
 indw2907
-
-80464016  (DIEGO)
-vivo2017
-MODIFY USER "80464016" AS PASSWORD = ***;                   
+            
 
 SAIPANNEW TERADATA
 192.168.100.18
@@ -35,26 +31,13 @@ user cqc senha producao
 AMPELA  cezarina_ag Senha cezarina_ag
 
 SAIPANNEW: a5113588 Senha a5113588
-                      a5131100 Senha vivo2015
-
-MENIPPE USER a5113588 SENHA Indra@2061
-
-ADWEB DIEGORSILVA32 Senha 54B
-
+           a5131100 Senha vivo2015
 
 
 
 Configuração Maquina
 
 Proxy: proxy.indproj.com.br Port: 3128
-
-Spotify 12148915186
-
-
-MAINFRAME -  BIBI
-USER : E461740
-SENHA :INDRA321
-
 
 
 > user luiz felipe teradata
